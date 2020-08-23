@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5 ">
+
+  <!-- Navbar -->
+  <div class="w3-top">
+   <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <a href="index copia.html" class="w3-bar-item w3-button w3-theme-d4"><i class="fa fa-home w3-margin-right" href="javascript:void(0);" onclick="openNav(2)"> CentroSportivoAntillo</i></a>
+    <input type="text" class="w3-bar-item w3-input w3-hide-small w3-white w3-mobile " placeholder="Cerca..">
+    <button class="w3-bar-item w3-button w3-mobile w3-hide-small w3-padding-large fa fa-search"></button>
+    <!-- Navbar per schermi piccoli -->
+    <div id="navHome" class="w3-bar-block w3-theme-d4 w3-hide w3-hide-large w3-hide-medium ">
+    </div>
+   </div>
+  </div>
+
+  <!-- Inizio Pagina -->
+  <div class="w3-container w3-content " style="max-width:600px;margin-top:80px">
+    <!-- Inizio Grid --> 
+    <div class="w3-container w3-theme-d2">
+      <br>
+    <!-- Inizio Form -->
+      <form action='home copia.html' method='post'><!-- id="create-product-form"-->
+        <div class="w3-container w3-theme-d2">
+          <h4>Effettua il login per incominciare a divertirti con gli amici!</h4>
+            <p><label class="w3-text-white">Username</label><input class="w3-input w3-light-grey" id="user" type="text"></p> <!-- name="username"-->
+            <p><label class="w3-text-white">Password</label><input class="w3-input w3-light-grey" id="pass" type="password"></p><!-- name="password"-->
+            <br>
+              <div class="w3-bar-item w3-center">
+                <button class="w3-button w3-theme" type="submit" name="submit" onclick="checkAccess()">Accedi</button>
+              </div>
+        </div>
+      <br>
+      </div>
+      <div class="w3-panel w3-grey w3-display-container">
+        <span onclick="this.parentElement.style.display='none'"class="w3-button w3-grey w3-large w3-display-topright">x</span>
+          <p>Utilizzando i servizi del Centro Sportivo del Comune di Antillo accetti il nostro <a href="#">Utilizzo dei cookie </a>e il <a href="#">Trasferimento dati  </a>al di fuori dell'UE. Noi e i nostri partner operiamo globalmente e utilizziamo i cookie anche per statistiche, personalizzazioni e annunci.</p>
+      </div>
+  </div>
+</div>
+</form>
+
+
+<script src="app/app.js">//richiama script serializeObject</script>
+
+<script>
+
+//Accetta solo numeri e lettere
+  function onlyAlphaNum(evt)
+  {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /[a-z,A-Z,0-9]/;
+    if( !regex.test(key) )
+    {
+      alert("Questo carattere non può essere inserito!");
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }  
+
+  // Trasforma i pulsanti della schermata grande in menù a tendina
+  function openNav(y)
+  {
+    if (y==2) 
+      {var x = document.getElementById("navHome");}
+    else if (y==1)
+      {var x = document.getElementById("navUser");}
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else { 
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+
+
+
+
+function checkAccess(){
+/*
+        $.get( "api.php/utente/")
+
+        .done(function(data) {
+          document.getElementById("ajaxres").innerHTML = data; //Stampa a video
+          })
+        .fail(function(err) {
+          alert( "error" );
+        });
+
+      }---------------------------
+*/          
+
+        user = document.getElementById("user").value;
+        pass = document.getElementById("pass").value;
+        console.log(user);
+        console.log(pass);
+        if (user.length < 1 || pass.length < 8)
+        { 
+          console.log("ok");
+        }
+        else
+        {
+
+          // metodo per leggere dal file read_one
+          $.getJSON("http://127.0.0.1:8080/api/utenti/read_one.php?usr="+user, function(data){ 
+          console.log(data.username);
+          console.log(data.password);
+          });
+        }
+}
+
+
+
+//metodo per leggere dal file read
+
+
+/*$.getJSON("http://127.0.0.1:8080/api/utenti/read.php", function(data){
+            $.each(data.records, function(key, val) {
+              console.log(val.username);
+              console.log(val.password);
+            });*/
+
+
+
+
+
+
+
+/*                                                       -------- METODO POST AJAX ULTIMO
+$(document).on('submit', '#create-product-form', function(){
+        // form data will be here
+        var data=JSON.stringify($(this).serializeObject());
+        var error_man="";
+    $.ajax({
+      type: 'POST',
+      data: data,
+      url: 'http://127.0.0.1:8080/api/utenti/read.php'
+    })
+
+    .done(function(data, err) {
+
+      var jdata = JSON.parse(data)
+
+      if (jdata.error == 0){
+        status_man ("");
+        handle_data(jdata);
+
+      } else {
+        error_man=("Errore: " + JSON.stringify(jdata.data));
+      }
+
+    })
+    .fail(function(err) {
+      error_man=("Errore nella richiesta AJAX");
+    });
+    return false;
+  });
+*/
+
+/*
+    $(document).on('submit', '#create-product-form', function(){
+        // form data will be here
+        //var form_data=JSON.stringify($(this).serializeObject());
+        var form_data=($(this).serializeObject());
+
+        console.log(form_data);
+        // submit form data to api
+      $.ajax({
+          url: "http://127.0.0.1:8080/api/utenti/create.php",
+          type : "POST",
+          contentType : 'application/json',
+          data : form_data,
+          success : function(result) {
+              // product was created, go back to products list
+              showProducts();
+          },
+          error: function(xhr, resp, text) {
+              // show error to console
+              console.log(xhr, resp, text);
+          }
+      });
+       
+      return false;
+      });
+
+
+
+*/
+
+</script>
+</body>
+</html>

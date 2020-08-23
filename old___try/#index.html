@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5 ">
+
+  <!-- Navbar -->
+  <div class="w3-top">
+   <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-theme-d4"><i class="fa fa-home w3-margin-right" href="javascript:void(0);" onclick="openNav(2)"> CentroSportivoAntillo</i></a>
+    <input type="text" class="w3-bar-item w3-input w3-hide-small w3-white w3-mobile " placeholder="Cerca..">
+    <button class="w3-bar-item w3-button w3-mobile w3-hide-small w3-padding-large fa fa-search"></button>
+    <!-- Navbar per schermi piccoli -->
+    <div id="navHome" class="w3-bar-block w3-theme-d4 w3-hide w3-hide-large w3-hide-medium ">
+    <input type="text" class="w3-bar-item w3-input w3-white w3-mobile " placeholder="Cerca..">
+    <button class="w3-bar-item w3-button w3-mobile w3-tiny fa fa-search"></button>
+    </div>
+   </div>
+  </div>
+
+<!-- Inizio Pagina -->
+<div class="w3-container w3-content " style="max-width:1400px;margin-top:80px">    
+  <!-- Inizio Slide -->
+  <div class="w3-content w3-display-container" style="max-width:100%">
+    <img class="mySlides" src="img/foto/foto0.jpg" style="width:100%">
+    <img class="mySlides" src="img/foto/foto1.jpg" style="width:100%">
+    <img class="mySlides" src="img/foto/foto2.jpg" style="width:100%">
+    <img class="mySlides" src="img/foto/foto3.jpg" style="width:100%">
+    <img class="mySlides" src="img/foto/foto4.jpg" style="width:100%">
+    <img class="mySlides" src="img/foto/foto5.jpg" style="width:100%">
+    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+      <span class="demo" onclick="currentDiv(1)"></span>
+      <span class="demo" onclick="currentDiv(2)"></span>
+      <span class="demo" onclick="currentDiv(3)"></span>
+      <span class="demo" onclick="currentDiv(4)"></span>
+      <span class="demo" onclick="currentDiv(5)"></span>
+    </div>
+  </div>
+  <!-- Inizio Grid --> 
+<div class="w3-container">
+  <br>
+<!-- Inizio Prima Riga Di Pulsanti -->
+    <div class="w3-bar w3-block">
+      <a href="login.html"><button type="button" class="w3-bar-item w3-button w3-theme w3-large" style="width:50%">Login</button></a>
+      <a href="faq.html"><button type="button" class="w3-bar-item w3-button w3-theme w3-large" style="width:50%">FAQ</button><br></a>
+    </div>
+<!-- Inizio Seconda Riga Di Pulsanti -->
+    <div class="w3-bar">
+      <a href="formReg.html"><button class="w3-bar-item w3-button w3-theme w3-large" style="width:50%">Registrati</button></a>
+      <a href="about.html"><button class="w3-bar-item w3-button w3-theme w3-large" style="width:50%">About</button></a>
+    </div>
+    <div class="w3-panel w3-grey w3-display-container">
+    <span onclick="this.parentElement.style.display='none'"class="w3-button w3-grey w3-large w3-display-topright">x</span>
+      <p>Utilizzando i servizi del Centro Sportivo del Comune di Antillo accetti il nostro <a href="#">Utilizzo dei cookie </a>e il <a href="#">Trasferimento dati  </a>al di fuori dell'UE. Noi e i nostri partner operiamo globalmente e utilizziamo i cookie anche per statistiche, personalizzazioni e annunci.</p>
+    </div>
+
+
+
+<script>
+//Accetta solo numeri e lettere
+  function onlyAlphaNum(evt)
+  {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /[a-z,A-Z,0-9]/;
+    if( !regex.test(key) )
+    {
+      alert("Questo carattere non può essere inserito!");
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }  
+
+  // Trasforma i pulsanti della schermata grande in menù a tendina
+  function openNav(y)
+  {
+    if (y==2) 
+      {var x = document.getElementById("navHome");}
+    else if (y==1)
+      {var x = document.getElementById("navUser");}
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else { 
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-white";
+    }
+    var myIndex = 0;
+    carousel();
+
+  //Funzione di cambio automatico delle immagini
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000);
+    }
+</script>
+</body>
+</html>

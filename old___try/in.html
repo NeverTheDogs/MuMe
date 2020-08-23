@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+<script type="text/javascript">
+
+$(document).ready(function() { $("#email").keyup(function(){
+	var email = this.id;
+	$.ajax({ type: "POST",
+		url: "checkmail.php",
+		data: email+"="+this.value,
+		success: function(response){
+		if(response== '0')
+		{
+			$("#check_email").html('<img src="avilable.jpg" >  Disponibile ');
+		}
+		else
+		{
+			$("#check_email").html('<img src="not_available.jpg" >  Non disponibile ');
+			$("#email").val("");
+		}
+	}
+});});});
+</script>
+
+</head>
+<body>
+ 
+<h2>Form di registrazione</h2>
+ 
+<form action="registration.php" method="post">
+<div>
+<label>
+<span>Nome:</span>
+<input  type="text"   id="nome" name="nome" required autofocus />
+</label>
+</div>
+<div>
+<label>
+<span>Cognome:</span>
+<input  type="text"  id="cognome" name="cognome" required autofocus />
+</label>
+</div>
+<div>
+<label>
+<span>Email:</span>
+<input  id="email" name="email" type="email"   required />
+<span id="check_email"></span>
+</label>
+</div>
+ 
+<div>
+<label>
+<span>Password:</span>
+<input  type="password"   name="password" id="password" />
+</label>
+</div>
+<div>
+<button name="submit" type="submit" id="button-submit">Invia</button>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-theme-d2 " href="javascript:void(0);" onclick="openNav(1)"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-theme-d4"><i class="fa fa-home w3-margin-right" href="javascript:void(0);" onclick="openNav(2)"> CentroSportivoAntillo</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white" title="Reserve"><i class="fa fa-truck"></i></a>
+  <input type="text" class="w3-bar-item w3-input w3-hide-small w3-white w3-mobile " placeholder="Search..">
+  <button class="w3-bar-item w3-button w3-mobile w3-hide-small w3-padding-large fa fa-search"></button>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-white " title="My Account">
+    <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-9/13166035_926528930793413_2151864350932511632_n.jpg?oh=da38108ee18f8c1e1dd11cffcc24eab4&oe=5B1C86B4" class="w3-circle" style="height:23px;width:23px" alt="Avatar"></a>
+  <!-- Navbar per schermi piccoli -->
+  <div id="navHome" class="w3-bar-block w3-theme-d4 w3-hide w3-hide-large w3-hide-medium ">
+  <a href="#" class="w3-bar-item w3-button">Account Settings</a>
+  <a href="#" class="w3-bar-item w3-button">Message</a>
+  <a href="#" class="w3-bar-item w3-button">Reserve</a>
+  <input type="text" class="w3-bar-item w3-input w3-white w3-mobile " placeholder="Search.."><button class="w3-bar-item w3-button w3-mobile w3-tiny fa fa-search"></button>
+  </div>
+  <div id="navUser" class="w3-bar-block w3-theme-d4 w3-hide w3-hide-large w3-hide-medium ">
+  <a href="#" class="w3-bar-item w3-button">Logout</a>
+  </div>
+ </div>
+</div>
+
+
+<!-- Inizio Pagina -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- Inizio Grid -->
+  <div class="w3-row">
+    <!-- Inizio Colonna Sinistra -->
+    <div class="w3-col m3">
+      <!-- Profilo Utente -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">Cristian Costa</h4>
+         <p class="w3-center"><img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-9/13166035_926528930793413_2151864350932511632_n.jpg?oh=da38108ee18f8c1e1dd11cffcc24eab4&oe=5B1C86B4" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Attaccante presso <a href="#" class="w3-opacity">I Surici Virdi</a></p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Galleria foto -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo3')" class="w3-button w3-theme-l1 w3-left-align"><i class="fa fa-camera-retro fa-fw w3-margin-right"></i> Galleria</button>
+          <button class="w3-button w3-theme-l1 w3-right-align"><i class="fa fa-plus"></i>Aggiungi</button>
+          </div>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-0/p206x206/20476520_1262271517228489_8541618260405178532_n.jpg?oh=6c76280fe3bebaa18b300ed469b39f89&oe=5B079DB2" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-9/1798003_10201741269229644_9008181602443965706_n.jpg?oh=0fd20c534f0c3d4e69313b194345ffa3&oe=5B0D2D52" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t31.0-8/664495_432743363456758_1429968581_o.jpg?oh=148e3b7c9fc91d5d4d569411193b6841&oe=5ADD3F8F" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-0/p206x206/1455865_10202308071720559_7437570466383337836_n.jpg?oh=a568a1068d45ce5d8d8e1bc58f39bf0c&oe=5B25A245" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-9/10492609_10202780405288603_38778984341430461_n.jpg?oh=427b6db76d0c2aa20f6eebaa25047117&oe=5AD8CFB1" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="https://scontent.fcia1-1.fna.fbcdn.net/v/t1.0-0/p206x206/1538791_10202301852045071_7383805493307950477_n.jpg?oh=bf1448a957a5f8e709cce0a41647cbdb&oe=5B1AED7D" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+         <button type="button" class="w3-button w3-block w3-theme-l1 w3-margin-bottom">Altro . . .</button> 
+        </div>      
+      </div>
+      <br><br>
+    <!-- End Left Column -->
+    </div>
+
+<!-- Placeholder per il content di riga 115 -->    
+<style>
+  [contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  }
+  div[contenteditable=true] {
+    border: 1px dashed #AAA;
+    width: 290px;
+    padding: 5px;
+  }
+</style>
+<!-- Inizio colonna di mezzo -->
+
+    <div id="Mezzo" class="w3-col m7">
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h6 class="w3-opacity">Invia un messaggio ai tuoi amici</h6>
+              <!--<p contenteditable="true" class="w3-border w3-padding" placeholder="Che facciamo oggi?"></p>-->
+
+              <input id="inp_post">asdasda</input>
+
+              <button type="button" id="BOTTONEBELLO" class="w3-button w3-theme" onclick="aggiungi()"><i class="fa fa-pencil"></i>  Post</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="/w3images/forest.jpg" alt="Forest" style="width:100%;">
+          <p><strong>Holiday</strong></p>
+          <p>Friday 15:00</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Friend Request</p>
+          <img src="/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
+          <span>Jane Doe</span>
+          <div class="w3-row w3-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+        <p>ADS</p>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+        <p><i class="fa fa-bug w3-xxlarge"></i></p>
+      </div>
+      
+    <!-- Fine colonna destra -->
+    </div>
+    
+  <!-- Fine grid -->
+  </div>
+  
+<!-- Fine pagina container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d5">
+  <p>Powered by <a href ="mailto:c1506t@gmail.com" target="_blank">Cristian Costa</a></p>
+</footer>
+ 
+<script>
+
+load()
+
+// Apertura galleria foto
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else { 
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Trasforma i pulsanti della schermata grande in menù a tendina
+function openNav(y) {
+  if (y==2) 
+    {var x = document.getElementById("navHome");}
+  else if (y==1)
+    {var x = document.getElementById("navUser");}
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function load(){
+
+  console.log("asdasd")
+
+  Things = ["dio", "porco"]
+
+  for (var i = Things.length - 1; i >= 0; i--) {
+      
+
+      document.getElementById("Mezzo").innerHTML += `
+
+  <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">1 min</span>
+        <h4>John Doe</h4><br>
+        <hr class="w3-clear">
+        <p>` + Things[i] + `</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+          </div>
+        </div>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>
+
+  `;
+  };
+}
+
+
+
+function aggiungi(){
+
+  var a = document.getElementById("inp_post").value;
+      
+  // CARICA QUI SUL DB
+
+
+      document.getElementById("Mezzo").innerHTML += `
+
+  <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">1 min</span>
+        <h4>John Doe</h4><br>
+        <hr class="w3-clear">
+        <p>` + a + `</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+          </div>
+        </div>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>
+
+  `;
+}
+
+  
+
+
+
+
+
+</script>
+
+</body>
+</html> 

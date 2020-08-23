@@ -1,0 +1,50 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: black;
+    line-height: 1.8;
+}
+
+p {
+  width: 120px;
+  padding: 2px 5px;
+
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+.overflow-visible {
+  white-space: initial;
+}
+
+
+/* Creazione effetto immagine a scomparsa */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgimg-1 {
+    background-image: url('http://www.tempostretto.it/sites/www.tempostretto.it/files/styles/juicebox_medium/public/iso_4955museo_regionale_di_messina_inaugurazione_nuova_ala.jpg?itok=8t6WPGhk');
+    min-height: 60%;
+}
+.bgimg-2 {
+    background-image: url("http://www.letteraemme.it/wp-content/uploads/2017/03/img014-840x420.jpg");
+    min-height: 60%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Disabilitazione effetto immagine a scomparsa su schermi piccoli */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
